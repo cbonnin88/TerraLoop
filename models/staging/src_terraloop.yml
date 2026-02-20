@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: terraloop_raw
+    database: poetic-maxim-486609-e5
+    schema: raw_terraloop
+    tables:
+      - name: events
+      - name: users
