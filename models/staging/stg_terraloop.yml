@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: 'Cleaned event stream from the TerraLoop app. Standardizes Platforms and handles null categories'
+    columns:
+      - name: user_id
+        description: 'Unique identifier for the user (Format: TL-XXXX)'
+        tests:
+          - not_null
+      - name: event_name
+        description: 'The action the user took (e.g., session_sart, start_listing).'
+      - name: platform
+        description: 'The device platform, standardized to lowercase (ios, android, web).'
+        tests:
+          - accepted_values:
+              arguments: ['ios','android','web']
