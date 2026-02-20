@@ -1,6 +1,11 @@
 WITH events AS (
     SELECT * FROM {{ref('stg_events')}}
 ),
+
+users AS (
+    SELECT * FROM {{ref('stg_users')}}
+),
+
 user_funnel AS (
     SELECT
         user_id,
@@ -9,13 +14,16 @@ user_funnel AS (
     FROM events
     GROUP BY 1
 )
+
 SELECT 
-    user_id,
-    started_listings,
-    completed_listings,
+    s.user_id,
+    u.user_tier, -- Bringing in the dimension for analysis
+    s.started_listings,
+    s.completed_listings,
     -- Simple conversion logic
     CASE 
-        WHEN started_listings > 0 THEN (completed_listings / started_listings)
+        WHEN s.started_listings > 0 THEN (s.completed_listings / s.started_listings)
         ELSE 0
     END AS conversion_rate
-FROM user_funnel
+FROM user_funnel AS s
+LEFT JOIN users AS u USING(user_id)
