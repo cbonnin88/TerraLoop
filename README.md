@@ -1,5 +1,8 @@
 # 🌍 TerraLoop: End-to-End Product Analytics Pipeline
 
+### **🌟 Impact Statement**
+> "By turning raw data into interactive insights, this pipeline enables TerraLoop to optimize its circular economy marketplace, potentially increasing successful recycling completions by identifying and removing user friction."
+
 ### **Project Overview**
 TerraLoop is a circular economy startup aimed at reducing e-waste and industrial scrap. This project implements a **Modern Data Stack (MDS)** to transform raw, messy event logs into a strategic analytics suite. By modeling user behavior and listing performance, I identified key friction points in the user journey and regional variations in sustainability impact.
 
@@ -49,8 +52,3 @@ TerraLoop is a circular economy startup aimed at reducing e-waste and industrial
 ### **Next Steps**
 * [ ] Automate the pipeline using GitHub Actions.
 * [ ] Implement a Slack notification for dbt test failures using Elementary.
-
----
-
-### **🌟 Impact Statement**
-> "By turning raw data into interactive insights, this pipeline enables TerraLoop to optimize its circular economy marketplace, potentially increasing successful recycling completions by identifying and removing user friction."
